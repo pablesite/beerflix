@@ -1,11 +1,13 @@
 // import {hideFilter, showFilter} from './navbar.js';
 
+import {renderBeersDOM} from './beers.js'
+
 page('/', () => { // eslint-disable-line
     console.log('Home page');
     // //handleNavBar('no-filter', 'filter')
     // showFilter();
     // hideQuotesForm();
-    // renderShowsDOM();
+    renderBeersDOM();
 });
 
 page('/detail/:id', ctx => {
