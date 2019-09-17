@@ -1,0 +1,11 @@
+/* Contenido principal para 360px - resolución GalaxyS9 */
+
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+}

@@ -1,36 +1,144 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no">
     <title>BeerFlix</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <!-- styles -->
+    <link rel="stylesheet" href="/src/css/reset.css">
     <link rel="stylesheet" href="/src/css/styles.css">
+    <link rel="stylesheet" href="/src/css/navbar.css">
+    <link rel="stylesheet" href="/src/css/header.css">
+    <link rel="stylesheet" href="/src/css/grid.css">
+    <link rel="stylesheet" href="/src/css/img_hover.css">
+    <link rel="stylesheet" href="/src/css/flaticon_social.css">
+    <link rel="stylesheet" href="/src/css/footer.css">
 
-  </head>
-  <body>
+
+</head>
+
+<body>
     <!-- navbar -->
-    <nav id="navbar" class="r">
-        
+    <nav id="navbar" class="menu">
+
         <div class="navbar-logo">
             <a href="/">BeerFlix</a>
         </div>
 
-        <div class="navbar-right-actions">
-            <div class="filter-container">
-            </div>
+        <ul class="menu-list">
 
-            <div class="navbar-icon">
-            </div>
-        </div>
+            <input type="text" class="search" placeholder="Buscar">
+
+        </ul>
 
     </nav>
+
+
     <!-- navbar-end -->
+
+    <header class="header">
+        <h1>Cervezas del mundo <span>Acceso rápido</span></h1>
+        <p class="tagline">Alemanas, Belgas, Españolas....</p>
+    </header>
+
 
     <!-- main–section -->
     <main>
-        
+        <div class="grid">
+
+            <div class="grid-item grid-item-1">
+
+                <a href="/detail/1">
+                    <div class="beer principal">
+                        <header class="beer-header">
+                            <h2>Buzz</h2>
+                        </header>
+                        <div class="beer-content">
+                            <div class="beer-content-image">
+                    
+                                <img src="https://images.punkapi.com/v2/keg.png">
+                            </div>
+                   
+                            <div class="beer-content-text">
+                                <p>A light, crisp and bitter IPA brewed with English and American hops. A small batch
+                                    brewed only once.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="grid-item grid-item-2">
+                <a href="/detail/2">
+                    <div class="beer principal">
+                        <header class="beer-header">
+                            <h2>Trashy Blonde</h2>
+                        </header>
+                        <div class="beer-content">
+                            <div class="beer-content-image">
+                                <img src="https://images.punkapi.com/v2/2.png">
+                            </div>
+                            <div class="beer-content-text">
+                                <p>A titillating, neurotic, peroxide punk of a Pale Ale. Combining attitude, style,
+                                    substance, and a little bit of low self esteem for good measure; what would your
+                                    mother say? The seductive lure of the sassy passion fruit hop proves too much to
+                                    resist. All that is even before we get onto the fact that there are no additives,
+                                    preservatives, pasteurization or strings attached. All wrapped up with the customary
+                                    BrewDog bite and imaginative twist.</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="grid-item grid-item-3">
+                <a href="/detail/3">
+                    <div class="beer principal">
+                        <header class="beer-header">
+                            <h2>Berliner Weisse With Yuzu - B-Sides</h2>
+                        </header>
+                        <div class="beer-content">
+                            <div class="beer-content-image">
+                                <img src="https://images.punkapi.com/v2/keg.png">
+                            </div>
+                            <div class="beer-content-text">
+                                <p>Japanese citrus fruit intensifies the sour nature of this German classic.</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="grid-item grid-item-4">
+                <a href="/detail/4">
+                    <div class="beer principal">
+                        <header class="beer-header">
+                            <h2>Pilsen Lager</h2>
+                        </header>
+                        <div class="beer-content">
+                            <div class="beer-content-image">
+                                <img src="https://images.punkapi.com/v2/4.png">
+                            </div>
+                            <div class="beer-content-text">
+                                <p>Our Unleash the Yeast series was an epic experiment into the differences in aroma and
+                                    flavour provided by switching up your yeast. We brewed up a wort with a light
+                                    caramel note and some toasty biscuit flavour, and hopped it with Amarillo and Centennial for
+                                    a citrusy bitterness. Everything else is down to the yeast. Pilsner yeast ferments
+                                    with no
+                                    fruity esters or spicy phenols, although it can add a hint of butterscotch.</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+        </div>
     </main>
     <!-- main-section end -->
 
@@ -40,6 +148,22 @@
     <!-- comment-form -->
     <!-- comment-form end -->
 
+    <!-- footer -->
+    <footer class="footer">
+        <aside class="description">
+            <p>Conóceme en las redes sociales.</p>
+        </aside>
+        <aside class="flaticon">
+            <ul class="flaticon-list">
+                    <li><a href="#"><i class="flaticon-social" id="facebook"></i></a></li>
+                    <li><a href="#"><i class="flaticon-twitter"></i></a></li>
+                    <li><a href="#"><i class="flaticon-linkedin"></i></a></li>
+                </ul>
+        </aside>
+    </footer>
+    <!-- footer end -->
+
+
     <!-- loader -->
     <!-- Loader end -->
 
@@ -47,5 +171,6 @@
     <script type="module" src="/src/js/routes.js"></script>
 
 
-    </body>
+</body>
+
 </html>

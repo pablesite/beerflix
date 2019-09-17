@@ -1,0 +1,114 @@
+/* Contenido principal para 360px - resolución GalaxyS9 */
+
+/*GRID HOME (FLEX)*/
+
+.main_flex{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.section_element{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+}
+
+#new-races{
+    margin-top: -3.5rem;
+
+}
+
+.section_element >a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: larger;
+
+}
+
+
+/* SECTIONS */
+
+.section_title{
+    padding-top: .5em;
+
+}
+
+.grid-races{
+    display:flex;
+    flex-wrap: wrap;
+
+    flex: 1 1 100%;
+    justify-content: space-between;
+
+
+}
+
+.grid-element{
+    clear: both;
+    flex: 1 1 30%;
+
+}
+
+
+/*MEDIA QUERIES*/
+
+@media all and (min-width: 768px) {
+    .grid-element {
+        flex: 0 1 16.3%;
+
+    }
+
+}
+
+@media all and (min-width: 1280px) {
+
+    .grid-element {
+        flex: 0 1 16.3%;
+
+    }
+
+}
+
+
+.grid {
+  
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: auto;
+    grid-gap: 0.5rem;
+    padding: 0rem;
+    background-color: var(--bg-color);
+    width: var(--max-width - 100px);
+    /* height: 115vh; */
+  
+    /* //Alineación global */
+    /* //Horizontal */
+    justify-items: center; 
+    /* //Vertical */
+    align-items: center; 
+  
+    /* //Autoflow!! */
+    grid-auto-flow: dense;
+  
+}
+
+.grid-item {
+  
+    width:100%;
+    min-height: 100%; 
+    /* background-color: var(--bg-beer); */
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+  
+}
+
+
+.grid-item > a  {
+    text-align: center;
+    text-decoration-line: none;
+    
+}
+

@@ -1,0 +1,128 @@
+/* Contenido principal para 360px - resolución GalaxyS9 */
+
+/* MENU HEADER */
+
+.menu {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    top: 0;
+
+    z-index: 1;
+}
+
+.menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    list-style-type: none;
+
+    margin: 0;
+
+}
+
+.menu-item > a {
+    display: block;
+
+
+    font-size: x-small;
+    text-decoration: none;
+
+    padding: .5rem;
+
+    border-radius: 10px;
+
+    transition: all .3s ease-in;
+
+}
+
+.menu-item > a:hover {
+    background-color: #555;
+
+    color: azure;
+
+}
+
+.search {
+    width: 18%;
+    font-size: x-small;
+
+    color: #222222;
+
+    margin: 0 1em 0 1em;
+
+}
+
+.navbar_logo {
+    background-image: url(../img/logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    flex:0 0 60px;
+    justify-content: flex-start;
+
+    height: 60px;
+
+    margin-left: 10px;
+
+}
+
+
+/*MEDIA QUERIES*/
+
+@media all and (min-width: 768px) {
+
+    .menu-item > a {
+        font-size: small;
+    }
+
+    .search {
+        font-size: small;
+
+    }
+
+    .log_out {
+        width: 32px;
+        height: 32px;
+
+        border: 7px solid white;
+        -webkit-border-radius: 18px;
+        -moz-border-radius: 18px;
+        border-radius: 18px;
+
+    }
+
+
+}
+
+@media all and (min-width: 1280px) {
+
+    .menu-item > a {
+        font-size: medium;
+    }
+
+    .search {
+        font-size: medium;
+    }
+
+    .log_out {
+        width: 35px;
+        height: 35px;
+
+    }
+
+    .log_out:hover > span {
+        background: #222222;
+
+        display: initial;
+        position: relative;
+        top: 40px;
+        right: 24px;
+
+        font-size: x-large;
+
+    }
+
+}

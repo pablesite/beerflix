@@ -1,0 +1,78 @@
+/* Contenido principal para 360px - resolución GalaxyS9 */
+
+/*HEADER HOME*/
+.header {
+    background-image: url(/src/img/beer-header.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 60vh;
+
+    
+
+}
+
+.header > h1, .header > .tagline {
+    background-color: rgba(241,205,00,0.5);
+
+    font-size: small;
+    font-weight: normal;
+
+    padding: .5rem;
+
+    border-radius: 10px;
+
+    margin: 1em 45% 0 5%;
+    
+    color: black;
+
+}
+
+.header > h1 >  span {
+    display: block;
+
+    font-size: medium;
+    font-weight: 700;
+
+    color: black;
+}
+
+
+/*MEDIA QUERIES*/
+
+@media all and (min-width: 768px) {
+
+    .header > h1, .header > .tagline {
+        font-size: larger;
+
+        margin: 1em 63% 0 5%;
+
+    }
+
+    .header > h1 >  span {
+        font-size: x-large;
+
+    }
+}
+
+
+@media all and (min-width: 1280px) {
+
+    .header > h1, .header > .tagline {
+        font-size: x-large;
+
+        margin: 1em 71% 0 5%;
+
+    }
+
+    .header > h1 >  span {
+        font-size: xx-large;
+
+    }
+}
+

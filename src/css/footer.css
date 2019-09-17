@@ -1,0 +1,48 @@
+/* Contenido principal para 360px - resolución GalaxyS9 */
+
+/*FOOTER*/
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 1rem 2rem;
+
+
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+
+.description {
+    align-self: center;
+}
+
+.flaticon {
+    align-self: center;
+
+}
+
+.flaticon ul {
+    padding-left: 0px;
+}
+
+.flaticon-list {
+    display: flex;
+
+    list-style: none;
+
+}
+
+.flaticon-list i:before {
+    font-size: 2rem;
+
+}
+
+
+#facebook:before {
+    margin:0;
+}

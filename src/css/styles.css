@@ -1,0 +1,68 @@
+/* Contenido principal para 360px - resolución GalaxyS9 */
+
+@import url('https://fonts.googleapis.com/css?family=Dosis&display=swap');
+
+@font-face {
+    font-family: 'Dosis', sans-serif;
+
+}
+
+:root {
+    --max-width: 360px;
+    --text-color: #3c3c37;
+    --bg-color:#f1cd00;
+    --bg-beer: #edebe8;
+    --color-1: #f0dfad;
+    --color-2: #8f5c38;
+}
+
+* {
+    font-family: Dosis;
+    color: var(--text-color);
+
+}
+
+body{
+    background-color: var(--bg-color);
+
+    max-width: var(--max-width);
+
+    margin-left: calc((103vw - var(--max-width))/2);
+    margin-right: calc((103vw - var(--max-width))/2);
+}
+
+
+
+main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+
+/*MEDIA QUERIES*/
+
+@media all and (min-width: 768px) {
+
+    :root {
+        --max-width: 768px;
+    }
+
+}
+
+
+@media all and (min-width: 1280px) {
+
+    :root {
+        --max-width: 1280px;
+    }
+
+
+}
+
+
+
+
+
+
+
+
