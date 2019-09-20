@@ -27,7 +27,7 @@ const templateBeers = ({ beerId, name, image, description }) => `
 `;
 
 const renderBeers = (element, beers) => {
-  const htmlBeers = beers.map(beers => templateBeers(beers)).join('');
+  const htmlBeers = beers.map(beer => templateBeers(beer)).join('');
   element.innerHTML = `
     <div class="grid">
       ${htmlBeers}

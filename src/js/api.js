@@ -49,7 +49,6 @@ const api = (API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh
                 }
                 const data = await response.json();
 
-
                 const filterBeers = data.beers.filter(function (beer) {
                     const inputDate = beer.firstBrewed.split('/');
                     if (parseInt(inputDate[1]) > startDataQuery.split("-")[0] && parseInt(inputDate[1]) < endDataQuery.split("-")[0]) {
@@ -78,6 +77,31 @@ const api = (API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh
                 throw err;
             }
         },
+
+        getBeersDetail: async id => {
+            try {
+              const requestURL = `${showsAPIEndpoint}/${id}`;
+              console.log(requestURL)
+              const response = await fetch(requestURL, {
+                headers: {
+                    'accept': 'application/json',
+                    'X-API-KEY': API_KEY,
+                },
+            });
+                if (!response.ok) {
+                    throw new Error('Error getting a show');
+                }
+
+                const data = await response.json();
+
+               
+                return data.beer;
+
+               } catch (err) {
+                    console.error(err);
+                    throw err;
+                }
+            },  
 
     };
 };

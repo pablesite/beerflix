@@ -1,6 +1,7 @@
 // import {hideFilter, showFilter} from './navbar.js';
 
 import {renderBeersDOM} from './beers.js'
+import renderDetail from './detail.js';
 
 
 page('/', () => { // eslint-disable-line
@@ -14,7 +15,7 @@ page('/', () => { // eslint-disable-line
 page('/detail/:id', ctx => {
     console.log('Detail');
     const { params: { id } } = ctx;
-    console.log(id);
+    renderDetail(id);
     
 });
 
