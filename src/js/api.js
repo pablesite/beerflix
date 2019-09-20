@@ -101,7 +101,30 @@ const api = (API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh
                     console.error(err);
                     throw err;
                 }
-            },  
+            }, 
+            
+            createQuote: async (id, text) => {
+                try {
+                    const response = await fetch(`${API_URL}beers/${id}/comment`, {
+                        method: 'POST',
+                        body: JSON.stringify({comment: text }),
+                        headers: {
+                            'Content-type': 'application/json',
+                            'X-API-KEY': API_KEY, 
+                        },
+                    });
+                    if (!response.ok) {
+                        throw new Error('Creating quote');
+                    }
+                    
+                    const responseBody = await response.json();
+                    return responseBody;
+                } catch (err) {
+                    console.error(err);
+                    throw err;
+                }
+     
+            },
 
     };
 };

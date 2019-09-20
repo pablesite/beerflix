@@ -29,7 +29,7 @@ const detailTemplate = ({ beerId, name, image, description, firstBrewed, price, 
     <div class="beer-content-right">
         <div class=" content beer-content-info">
             <p> Fecha de la primera elaboración: ${firstBrewed} </p>
-            <p> Precio: ${price} </p>
+            <p> Precio: ${price} €.</p>
             <p> Descripción: ${description} </p>
             <p> Consejos para disfrutarla: ${brewersTips} </p>
             <p> Ingredientes: </p>
@@ -48,8 +48,6 @@ const detailTemplate = ({ beerId, name, image, description, firstBrewed, price, 
 
 
 
-
-
 //Ejecuta promesas en paralelo, la última que termine es la que limita la duración de la llamada.
 //Lógicamente, deben ser independientes
 //Promise.all([p1, p2, p3])
@@ -59,19 +57,16 @@ const renderDetail = async id => {
         const beer = await (getBeersDetail(id));
         //const [show] = await Promise.all([getBeersDetail(id), renderQuotes(id)]); //[show] es un destructuring. Coge el primer elemento del array que devuelve
 
-        const selector = document.querySelector('main');
-        console.log(beer.ingredients)
-        
+        const selector = document.querySelector('main');        
         selector.innerHTML = detailTemplate(beer);
-        addElement(beer.ingredients)
-       
+        addIngredients(beer.ingredients)
 
     } catch (err) {
         console.error(err);
     }
 };
 
-function addElement (ingredients) { 
+function addIngredients (ingredients) { 
 
     var malt = [];
     var hops = [];

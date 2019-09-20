@@ -2,6 +2,8 @@
 
 import {renderBeersDOM} from './beers.js'
 import renderDetail from './detail.js';
+import {showQuotesForm} from './ui.js';
+import addQuoteListener from './quotesForm.js'
 
 
 page('/', () => { // eslint-disable-line
@@ -15,7 +17,11 @@ page('/', () => { // eslint-disable-line
 page('/detail/:id', ctx => {
     console.log('Detail');
     const { params: { id } } = ctx;
+    showQuotesForm();
     renderDetail(id);
+    addQuoteListener(id);
+    
+    
     
 });
 
