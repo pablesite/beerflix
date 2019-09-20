@@ -29,7 +29,20 @@
 
         <ul class="menu-list">
 
-            <input type="text" class="search" placeholder="Buscar">
+            <!-- <input validate type="text" class="search" placeholder="Buscar"> -->
+
+            <form id="search" class="filter-input" novalidate>
+
+                <label for="start">Start date:</label>
+                <input type="date" id="start" name="beer-start" value="2003-07-22">
+
+                <label for="end">End date:</label>
+                <input type="date" id="end" name="beer-end" value="2012-07-22">
+
+                <input data-pattern-mismatch="Input invalid" required placeholder="busca tu cerveza"
+                    class="input search" type="text">
+                <button type="submit" class="button search">Buscar</button>
+            </form>
 
         </ul>
 
@@ -46,7 +59,7 @@
 
     <!-- main–section -->
     <main>
-        
+
     </main>
     <!-- main-section end -->
 
@@ -63,10 +76,10 @@
         </aside>
         <aside class="flaticon">
             <ul class="flaticon-list">
-                    <li><a href="#"><i class="flaticon-social" id="facebook"></i></a></li>
-                    <li><a href="#"><i class="flaticon-twitter"></i></a></li>
-                    <li><a href="#"><i class="flaticon-linkedin"></i></a></li>
-                </ul>
+                <li><a href="#"><i class="flaticon-social" id="facebook"></i></a></li>
+                <li><a href="#"><i class="flaticon-twitter"></i></a></li>
+                <li><a href="#"><i class="flaticon-linkedin"></i></a></li>
+            </ul>
         </aside>
     </footer>
     <!-- footer end -->
@@ -74,9 +87,10 @@
 
     <!-- loader -->
     <!-- Loader end -->
-
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script type="module" src="/src/js/routes.js"></script>
+    <script type="module" src="/src/js/navbar.js"></script>
 
 
 </body>

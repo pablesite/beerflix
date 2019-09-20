@@ -4,60 +4,53 @@
 // import { openHeader } from './ui.js';
 import api from './api.js';
 
-const { getBeers } = api();
+const { getBeers, getBeersData } = api();
 
-const templateShow = ({ beerId, name, image, description, principal }) => `
+const templateBeers = ({ beerId, name, image, description }) => `
     <div class="grid-item grid-item-${beerId}">
-
-                <a href="/detail/${beerId}">
-                    <div class="beer principal">
-                        <header class="beer-header">
-                            <h2>${name}</h2>
-                        </header>
-                        <div class="beer-content">
-                            <div class="beer-content-image">
-                    
-                                <img src="${image}">
-                            </div>
-                   
-                            <div class="beer-content-text">
-                                <p>${description}</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
-            </div>  
+      <a href="/detail/${beerId}">
+        <div class="beer ">
+          <header class="beer-header">
+            <h2>${name}</h2>
+          </header>
+          <div class="beer-content">
+            <div class="beer-content-image">
+              <img src="${image}">
+            </div>
+            <div class="beer-content-text">
+              <p>${description}</p>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>  
 `;
 
-const renderShows = (element, beers) => {
-  const htmlShows = beers.slice(0, 100).map((show, index) => {
-    if (index < 2) {
-      return templateShow({
-        ...show,
-        principal: true,
-      });
-    }
-    return templateShow({ ...show, principal: false });
-  }).join('');
+const renderBeers = (element, beers) => {
+  const htmlBeers = beers.map(beers => templateBeers(beers)).join('');
   element.innerHTML = `
     <div class="grid">
-      ${htmlShows}
+      ${htmlBeers}
     </div>
   `;
-//   const headers = document.querySelectorAll('.card.secondary .card-header');
-//   headers.forEach((header) => {
-//     const id = header.parentNode.getAttribute('id');
-//     header.addEventListener('click', openHeader(id));
- // });
+  //   const headers = document.querySelectorAll('.card.secondary .card-header');
+  //   headers.forEach((header) => {
+  //     const id = header.parentNode.getAttribute('id');
+  //     header.addEventListener('click', openHeader(id));
+  // });
 };
 
-export const renderBeersDOM = async (query) => {
+export const renderBeersDOM = async (textQuery, startDataQuery, endDataQuery) => {
   try {
-    const fetchBeers = await getBeers(query);
-    console.log(fetchBeers);
+    var fetchBeers;
+    // si las fechas no existen, haces lo de siempre
+    if (!startDataQuery && !endDataQuery) {
+      fetchBeers = await getBeers(textQuery);
+    } else {
+      fetchBeers = await getBeersData(textQuery, startDataQuery, endDataQuery);
+    }
     const showSection = document.querySelector('main');
-    renderShows(showSection, fetchBeers);
+    renderBeers(showSection, fetchBeers);
   } catch (e) {
     console.error(e);
   }
