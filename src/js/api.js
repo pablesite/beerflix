@@ -20,13 +20,7 @@ const api = (API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh
                 }
                 const data = await response.json();
                 return data.beers;
-                // const formatData = data.map(item => {
-                //     if (item.show) {
-                //         return item.show;
-                //     }
-                //     return item //?¿ no sería else --> return item
-                // });
-                //return formatData; 
+
             }
             catch (err) {
                 console.error(err.message);
@@ -81,7 +75,6 @@ const api = (API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh
         getBeersDetail: async id => {
             try {
               const requestURL = `${showsAPIEndpoint}/${id}`;
-              console.log(requestURL)
               const response = await fetch(requestURL, {
                 headers: {
                     'accept': 'application/json',
@@ -130,7 +123,6 @@ const api = (API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh
                 try {
                     const response = await fetch(`${API_URL}beers/${id}/like`, {
                         method: 'POST',
-                        //body: JSON.stringify({comment: text }),
                         headers: {
                             'Content-type': 'application/json',
                             'X-API-KEY': API_KEY, 

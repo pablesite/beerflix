@@ -2,6 +2,7 @@
 // import escapeHtml from 'escape-html';
 
 // import { openHeader } from './ui.js';
+import {  renderLoader } from './ui.js';
 import api from './api.js';
 
 const { getBeers, getBeersData } = api();
@@ -42,6 +43,7 @@ const renderBeers = (element, beers) => {
 
 export const renderBeersDOM = async (textQuery, startDataQuery, endDataQuery) => {
   try {
+    renderLoader('hide', 'show');
     var fetchBeers;
     // si las fechas no existen, haces lo de siempre
     if (!startDataQuery && !endDataQuery) {
@@ -51,7 +53,9 @@ export const renderBeersDOM = async (textQuery, startDataQuery, endDataQuery) =>
     }
     const showSection = document.querySelector('main');
     renderBeers(showSection, fetchBeers);
-  } catch (e) {
+  } catch (e) { 
     console.error(e);
+  } finally {
+    renderLoader('show', 'hide');
   }
 };

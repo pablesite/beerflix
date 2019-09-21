@@ -1,4 +1,6 @@
+import {  renderLoader } from './ui.js';
 import api from './api.js';
+
 import { renderQuotes } from './quotes.js';
 import { renderLikes } from './likes.js';
 
@@ -55,6 +57,7 @@ const detailTemplate = ({ beerId, name, image, description, firstBrewed, price, 
 
 const renderDetail = async id => {
     try {
+        renderLoader('hide', 'show');
         //const beer = await (getBeersDetail(id));
         const [beer] = await Promise.all([getBeersDetail(id), renderQuotes(id), renderLikes(id)]); //[show] es un destructuring. Coge el primer elemento del array que devuelve
 
@@ -64,7 +67,9 @@ const renderDetail = async id => {
 
     } catch (err) {
         console.error(err);
-    }
+    } finally {
+        renderLoader('show', 'hide');
+      }
 };
 
 function addIngredients (ingredients) { 

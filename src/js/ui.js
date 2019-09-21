@@ -1,6 +1,6 @@
 
 // const logo = document.querySelector('#navbar .navbar-logo');
-// const loader = document.querySelector('#loader');
+const loader = document.querySelector('#loader');
 
  const detailSection = document.querySelector('#detailSection');
  const likeSection = document.querySelector('#likeSection');
@@ -43,14 +43,14 @@ export const showQuotesForm = () =>
 //     detailSection.innerHTML = '';
 
 
-// export const toggle = elemento => (removeClass, addClass) => {
-//     elemento.classList.remove(removeClass);
-//     elemento.classList.add(addClass);
-//   };
+ export const toggle = elemento => (removeClass, addClass) => {
+     elemento.classList.remove(removeClass);
+     elemento.classList.add(addClass);
+   };
 
 // export const toggleClass = (elemento, toggleClass) => {
 //     elemento.classList.toggle(toggleClass);
 // };
 
-// export const renderLoader = toggle(loader);
+export const renderLoader = toggle(loader);
     
