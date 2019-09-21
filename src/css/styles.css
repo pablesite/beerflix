@@ -4,18 +4,19 @@
 
 @font-face {
     font-family: 'Dosis', sans-serif;
-
 }
 
 :root {
     --max-width: 360px;
-    /* --text-color: #3c3c37; */
+     --text-color: #9A8300;
     /* --bg-color:#f1cd00; */
-    --text-color: #f1cd00;
     --bg-color:#ffffff;
     --bg-beer: #edebe8;
     --color-1: #f0dfad;
     --color-2: #8f5c38;
+    --button-color: #f1cd00;
+    --button-color-hov:#DCBB00; 
+    --bg-main-color: #F7E373
 }
 
 * {
@@ -31,6 +32,8 @@ body{
 
     margin-left: calc((103vw - var(--max-width))/2);
     margin-right: calc((103vw - var(--max-width))/2);
+/* 
+    border: 1px solid black; */
 }
 
 
