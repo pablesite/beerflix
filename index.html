@@ -28,24 +28,21 @@
             <a href="/"></a>
         </div>
 
-        <ul class="menu-list">
-
+        <!-- <ul class="menu-list"> -->
+        
             <!-- <input validate type="text" class="search" placeholder="Buscar"> -->
 
             <form id="search" class="filter-input" novalidate>
 
-                <label for="start">Start date:</label>
-                <input type="date" id="start" name="beer-start" value="2003-07-22">
-
-                <label for="end">End date:</label>
-                <input type="date" id="end" name="beer-end" value="2012-07-22">
-
-                <input data-pattern-mismatch="Input invalid" required placeholder="busca tu cerveza"
-                    class="input search" type="text">
-                <button type="submit" class="button search">Buscar</button>
+                <label class="item-form align-right" for="start">Start date:</label>
+                <input class="item-form" type="date" id="start" name="beer-start" value="2003-07-22">
+                <input class="item-form" data-pattern-mismatch="Input invalid" required placeholder="Busca tu cerveza" type="text">
+                <label class="item-form align-right" for="end">End date:</label>
+                <input class="item-form" type="date" id="end" name="beer-end" value="2012-07-22">                
+                <button class="item-form" type="submit" >Buscar</button>
             </form>
 
-        </ul>
+        <!-- </ul> -->
 
     </nav>
 

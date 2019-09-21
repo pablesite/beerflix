@@ -52,7 +52,6 @@
     color: #222222;
 
     margin: 0 1em 0 1em;
-
 }
 
 .navbar-logo {
@@ -73,8 +72,29 @@
     display: block;
     height: 60px;
 	width: 60px;
-
 }
+
+/* estas 3 clases son nuevas */
+.filter-input {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: stretch;
+    align-items: center; 
+    grid-gap: .1rem .5rem;
+    
+   }
+   
+.item-form {
+       font-size: .5rem;
+       display: block; 
+   }
+   
+.item-form.align-right {
+       justify-self: right; 
+   } 
+
+
 
 /*MEDIA QUERIES*/
 
@@ -89,15 +109,21 @@
 
     }
 
-    .log_out {
-        width: 32px;
-        height: 32px;
+    .item-form {
+        font-size: .8rem;
 
-        border: 7px solid white;
-        -webkit-border-radius: 18px;
-        -moz-border-radius: 18px;
-        border-radius: 18px;
+    }
 
+    .navbar-logo {
+        flex:0 0 80px;
+        height: 80px;
+        margin-left: 20px;
+    
+    }
+    
+    .navbar-logo > a {
+        height: 80px;
+        width: 80px;
     }
 
 
@@ -109,26 +135,26 @@
         font-size: medium;
     }
 
-    .search {
-        font-size: medium;
-    }
-
-    .log_out {
-        width: 35px;
-        height: 35px;
+    .item-form {
+        font-size: 1rem;
 
     }
 
-    .log_out:hover > span {
-        background: #222222;
-
-        display: initial;
-        position: relative;
-        top: 40px;
-        right: 24px;
-
-        font-size: x-large;
-
+    .navbar-logo {
+        flex:0 0 100px;
+        height: 100px;
+        margin-left: 30px;
+    
     }
+    
+    .navbar-logo > a {
+        height: 100px;
+        width: 100px;
+    }
+
+
+
 
 }
+
+
