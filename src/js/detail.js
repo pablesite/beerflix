@@ -1,5 +1,6 @@
 import api from './api.js';
-//import { renderQuotes } from './quotes.js';
+import { renderQuotes } from './quotes.js';
+import { renderLikes } from './likes.js';
 
 const { getBeersDetail } = api();
 
@@ -54,8 +55,8 @@ const detailTemplate = ({ beerId, name, image, description, firstBrewed, price, 
 
 const renderDetail = async id => {
     try {
-        const beer = await (getBeersDetail(id));
-        //const [show] = await Promise.all([getBeersDetail(id), renderQuotes(id)]); //[show] es un destructuring. Coge el primer elemento del array que devuelve
+        //const beer = await (getBeersDetail(id));
+        const [beer] = await Promise.all([getBeersDetail(id), renderQuotes(id), renderLikes(id)]); //[show] es un destructuring. Coge el primer elemento del array que devuelve
 
         const selector = document.querySelector('main');        
         selector.innerHTML = detailTemplate(beer);

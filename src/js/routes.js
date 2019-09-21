@@ -2,8 +2,9 @@
 
 import {renderBeersDOM} from './beers.js'
 import renderDetail from './detail.js';
-import {showQuotesForm} from './ui.js';
+import {showQuotesForm, showLikesForm} from './ui.js';
 import addQuoteListener from './quotesForm.js'
+import addLikesListener from './likesForm.js'
 
 
 page('/', () => { // eslint-disable-line
@@ -18,8 +19,12 @@ page('/detail/:id', ctx => {
     console.log('Detail');
     const { params: { id } } = ctx;
     showQuotesForm();
+    showLikesForm();
+    
     renderDetail(id);
+
     addQuoteListener(id);
+    addLikesListener(id);
     
     
     

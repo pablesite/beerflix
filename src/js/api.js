@@ -126,6 +126,29 @@ const api = (API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh
      
             },
 
+            addLike: async (id) => {
+                try {
+                    const response = await fetch(`${API_URL}beers/${id}/like`, {
+                        method: 'POST',
+                        //body: JSON.stringify({comment: text }),
+                        headers: {
+                            'Content-type': 'application/json',
+                            'X-API-KEY': API_KEY, 
+                        },
+                    });
+                    if (!response.ok) {
+                        throw new Error('Adding like');
+                    }
+                    
+                    const responseBody = await response.json();
+                    return responseBody;
+                } catch (err) {
+                    console.error(err);
+                    throw err;
+                }
+     
+            },
+
     };
 };
 
