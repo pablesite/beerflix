@@ -55,7 +55,7 @@
 
 }
 
-.navbar_logo {
+.navbar-logo {
     background-image: url(../img/logo.png);
     background-repeat: no-repeat;
     background-size: contain;
@@ -69,6 +69,12 @@
 
 }
 
+.navbar-logo > a {
+    display: block;
+    height: 60px;
+	width: 60px;
+
+}
 
 /*MEDIA QUERIES*/
 

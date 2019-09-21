@@ -9,8 +9,10 @@
 
 :root {
     --max-width: 360px;
-    --text-color: #3c3c37;
-    --bg-color:#f1cd00;
+    /* --text-color: #3c3c37; */
+    /* --bg-color:#f1cd00; */
+    --text-color: #f1cd00;
+    --bg-color:#ffffff;
     --bg-beer: #edebe8;
     --color-1: #f0dfad;
     --color-2: #8f5c38;
