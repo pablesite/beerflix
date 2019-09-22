@@ -1,5 +1,6 @@
 import api from './api.js'
 //import { get } from 'http';
+import { renderLoader } from './ui.js';
 
 const { addLike, getBeersDetail } = api();
 
@@ -17,6 +18,7 @@ const addLikesListener = id => {
     likesForm.addEventListener('submit', async evt => {
         evt.preventDefault();
         try {
+            renderLoader('hide', 'show');
             const responseFail = await addLike(id);
             //la API no trae los likes... hay que volver a llamar el listado de cervezas
             const beer = await getBeersDetail(id);
@@ -25,6 +27,8 @@ const addLikesListener = id => {
         } catch (err) {
             console.error(err);
             // handleError();
+        } finally {
+            renderLoader('show', 'hide');
         }
     });
 

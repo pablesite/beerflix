@@ -1,5 +1,6 @@
 import api from './api.js'
 //import { get } from 'http';
+import { renderLoader } from './ui.js';
 
 const { createQuote, getBeersDetail } = api();
 
@@ -24,6 +25,7 @@ const addQuoteListener = id => {
     quotesForm.addEventListener('submit', async evt => {
         evt.preventDefault();
         try {
+            renderLoader('hide', 'show');
             
             if (quotesInput.validity.valid) {
                 const responseFail = await createQuote(id, quotesInput.value);
@@ -37,6 +39,8 @@ const addQuoteListener = id => {
         } catch (err) {
             console.error(err);
             // handleError();
+        } finally {
+            renderLoader('show', 'hide');
         }
     });
 

@@ -3,7 +3,7 @@
 const loader = document.querySelector('#loader');
 
 const quotesSection = document.querySelector('#quotesSection');
-const likesSection = document.querySelector('#likesSection');
+
 
 export const showQuotesForm = () => 
   quotesSection.innerHTML = `
@@ -34,13 +34,8 @@ export const showQuotesForm = () =>
   `;
 
 
-  export const showLikesForm = () => 
-    likesSection.innerHTML = `
-  `;
-
-
-// export const hideQuotesForm = () => 
-//     detailSection.innerHTML = '';
+ export const hideQuotesForm = () => 
+     quotesSection.innerHTML = '';
 
 
  export const toggle = elemento => (removeClass, addClass) => {

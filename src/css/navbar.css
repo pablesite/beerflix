@@ -114,7 +114,9 @@
 } 
 
   
-
+.filter-input.no-filter {
+    display: none;
+  }
 
 /*MEDIA QUERIES*/
 

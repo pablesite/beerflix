@@ -1,18 +1,22 @@
+import { toggle } from './ui.js';
 import { renderBeersDOM } from './beers.js';
 import storage from './storage.js';
 
 const searchForm = document.querySelector('#search');
-const searchInput = document.querySelector('#navbar #search-input');
+const searchInput = document.querySelector('#search #search-input');
 
 const filterDataStart = document.querySelector('#start');
 const filterDataEnd = document.querySelector('#end');
 
 
 const {setItem, getItem } = storage('cookieStorage');
+const navbar = document.querySelector('.filter-input');
 
  searchInput.value = getItem('filter-input');
  filterDataStart.value = getItem('date-start');
  filterDataEnd.value = getItem('date-end');
+
+ const handleNavBar = toggle(navbar);
 
 searchForm.addEventListener('submit', evt => {
     evt.preventDefault();
@@ -25,7 +29,7 @@ searchForm.addEventListener('submit', evt => {
     }
 });
 
-// const hideFilter = () => handleNavBar('filter', 'no-filter');
-// const showFilter = () => handleNavBar('no-filter', 'filter');
+const hideFilter = () => handleNavBar('filter', 'no-filter');
+const showFilter = () => handleNavBar('no-filter', 'filter');
 
-// export {hideFilter, showFilter};
+export {hideFilter, showFilter};
