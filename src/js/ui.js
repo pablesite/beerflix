@@ -2,28 +2,24 @@
 // const logo = document.querySelector('#navbar .navbar-logo');
 const loader = document.querySelector('#loader');
 
- const detailSection = document.querySelector('#detailSection');
- const likeSection = document.querySelector('#likeSection');
+const quotesSection = document.querySelector('#quotesSection');
+const likesSection = document.querySelector('#likesSection');
 
 export const showQuotesForm = () => 
-    detailSection.innerHTML = `
-    <div id="detail" class="detail-content"></div>
-  <div class="quotes-list">
-    <h2>Quotes</h2>
-    <div id="quoteList">
-    </div>
-  </div>
-  <form id="quote-form" class="quote-form" novalidate>
+  quotesSection.innerHTML = `
+  <h2>Comentarios</h2>
+  <div id="quoteList"></div>
+  <form id="quote-form" class="quoteForm" novalidate>
     <div class="quote-input">
-      <label for="quote">Quote of this beer</label>
-      <input required id="quote" placeholder="Add your quote" class="input primary" type="text">
-    </div>
-    <button type="submit" class="button primary">Add quote</button>
+      <label id="label-quote" for="quote">¡Comenta esta cerveza!</label> <br>
+      <input id="input-quote" required placeholder="Inserta tu comentario" class="input primary" type="text">        <button type="submit" class="button primary">Añadir</button>
+      </div>
   </form>
   `;
 
+
   export const showLikesForm = () => 
-    likeSection.innerHTML = `
+    likesSection.innerHTML = `
     <div id="detail" class="detail-content"></div>
   <div class="likes-list">
     <h2>Likes</h2>

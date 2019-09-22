@@ -81,12 +81,13 @@ const api = (API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh
                     'X-API-KEY': API_KEY,
                 },
             });
+            
                 if (!response.ok) {
                     throw new Error('Error getting a show');
                 }
 
                 const data = await response.json();
-
+                console.log("response: " +data.beer)
                
                 return data.beer;
 

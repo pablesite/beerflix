@@ -1,4 +1,3 @@
-
 import api from './api.js';
 import { quoteTemplate } from './quotesForm.js';
 
@@ -10,6 +9,7 @@ const renderQuotes = async id => {
         // si no hay comentarios, la API no tiene la propiedad "comment", y da error! Este es problema de nuevo de la API, que confunde
         // comments por comment.
         const quotes = await getBeersDetail(id);
+        console.log("test: " +quotes)
         const quotesElements = quotes.comment.map(quoteTemplate).join('');
         quotesList.innerHTML = quotesElements;
     } catch (err) {

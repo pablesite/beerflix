@@ -1,0 +1,47 @@
+.list-item  {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: auto;
+    grid-gap: 0rem;
+    /* margin: .6rem 0 0 0; */
+    font-size: small;
+}
+
+.list-item #quote-header  {
+    font-weight: 800;
+}
+
+.list-item p  {
+    margin: .4rem 0 0 0;
+}
+
+
+
+#quote-header {
+    margin: .6rem 0 0 0;
+}
+
+#input-quote {
+    margin: .4rem 0 0 0;
+}
+
+
+
+.quoteForm {
+    margin: .6rem 0 1rem 0;
+}
+
+
+.quote-input .button {
+    background-color: var(--button-color); 
+    border-radius: 4px;
+    border: 1px solid var(--button-color);
+    text-decoration: none;
+    cursor: pointer;
+} 
+
+.quote-input .button:hover {
+    border-color:var(--button-color-hov); 
+    background-color: var(--button-color-hov); 
+} 
+

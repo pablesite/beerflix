@@ -1,0 +1,69 @@
+.detail-section{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: auto;
+    grid-gap: 0rem;
+
+    padding: 0 1rem 0 1rem;
+    width: var(--max-width - 100px);
+  
+    /* //Alineación global */
+    /* //Horizontal */
+    justify-items: center; 
+    /* //Vertical */
+    align-items: center; 
+  
+    /* //Autoflow!! */
+    grid-auto-flow: dense;
+}
+
+.beer-title-section h1 {
+    padding: .5rem 0 .5rem 0; 
+    font-size: larger;
+}
+.beer-content-left {
+  
+    width:100%;
+    min-height: 100%; 
+    /* background-color: var(--bg-beer); */
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    font-size: medium;
+  
+}
+
+.beer-content-right  {
+    text-align: left;
+    font-size: small;
+
+}
+
+.beer-content-right p {
+    margin: .4rem 0 0 0;
+}
+
+.beer-content-right span {
+    font-weight: 800;
+}
+
+.beer-content-right .parrafo {
+    text-align: justify;
+
+}
+
+.beer-content-right ul {
+    padding-left: 1rem;
+}
+
+.beer-content-right .ingredients {
+    font-size: smaller;
+
+}
+
+
+.beer-content-right > a  {
+    text-align: center;
+    text-decoration-line: none;
+    
+}

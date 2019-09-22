@@ -3,16 +3,16 @@ import api from './api.js'
 
 const { createQuote, getBeersDetail } = api();
 
-export const quoteTemplate = ( { comment, dateComment } ) => `
+export const quoteTemplate = ( { comment, dateComment }, id ) => `
 <div class="list-item">
-    <p>${comment}</p>
-    <span> ${dateComment} </span>
+    <div id="quote-header">Comentario ${id}, publicado: ${dateComment.split("T")[0]}</div>
+        <p>${comment}</p>
 </div>
 `;
 
 const addQuoteListener = id => {
     const quotesForm = document.querySelector('#quote-form');
-    const quotesInput = document.querySelector('#quote');
+    const quotesInput = document.querySelector('#input-quote');
     const quotesList = document.querySelector('#quoteList');
 
     quotesForm.addEventListener('submit', async evt => {
@@ -23,10 +23,9 @@ const addQuoteListener = id => {
                 const responseFail = await createQuote(id, quotesInput.value);
                 //la API no trae los comentarios... hay que volver a llamar el listado de cervezas
                 const response = await getBeersDetail(id);
-                //revisar por qué acumula comentarios esto... no tiene fuste.
-                quotesList.innerHTML += quoteTemplate(response.comment[response.comment.length - 1]);
-           
-            }        
+                quotesList.innerHTML += quoteTemplate(response.comment[response.comment.length - 1], response.comment.length - 1);           
+            }    
+                
         } catch (err) {
             console.error(err);
             // handleError();

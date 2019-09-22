@@ -1,4 +1,4 @@
-import {  renderLoader } from './ui.js';
+import { renderLoader } from './ui.js';
 import api from './api.js';
 
 import { renderQuotes } from './quotes.js';
@@ -6,48 +6,38 @@ import { renderLikes } from './likes.js';
 
 const { getBeersDetail } = api();
 
-const detailTemplate = ({ beerId, name, image, description, firstBrewed, price, brewersTips, ingredients }) => `
-   <div class="detail-section">
-     <header id="${beerId}">
-       <div class="title-section">
-         <h1>${name}</h1>
-       </div>
-     </header>
+const detailTemplate = ({ beerId, name, image, description, firstBrewed, price, brewersTips, ingredients }) =>`
+    <div class="detail-section">
 
-     <div class="beer-content-left">
-        <div class="beer-content-image">
-             <img src="${image}" />
+        <div class="beer-title-section">
+            <h1>${name}</h1>
         </div>
 
-        <div class="beer-content-likes">
-             <p> Likes: </p>
+        <div class="beer-content-left">
+            <div class="beer-content-image">
+                <img src="${image}" />
+            </div>
         </div>
-            
-        <div class="beer-content-comments">
-            <h3> Comentarios: </h3>
-        </div>
-     
-    </div>
 
-    <div class="beer-content-right">
-        <div class=" content beer-content-info">
-            <p> Fecha de la primera elaboración: ${firstBrewed} </p>
-            <p> Precio: ${price} €.</p>
-            <p> Descripción: ${description} </p>
-            <p> Consejos para disfrutarla: ${brewersTips} </p>
-            <p> Ingredientes: </p>
-                <ul>
-                    <li> Levadura: ${ingredients.yeast} </li>
-                    <li> Malta:  </li>
-                        <ul id="malt"></ul>
-                    
-                    <li> Lúpulo: </li>
-                        <ul id="hops"></ul>
-                </ul>
+        <div class="beer-content-right">
+
+            <p> <span>Precio:</span> ${price} €.</p>
+            <p class="parrafo"> <span>Descripción:</span> ${description} </p>
+            <p class="parrafo"> <span>Consejos para disfrutarla:</span> ${brewersTips} </p>
+            <p> <span>Fecha de la primera elaboración:</span> ${firstBrewed} </p>
+            <p> <span>Ingredientes:</span> </p>
+            <ul>
+                <li> <span>Levadura:</span> </li>
+                    <ul class="ingredients" id="yeast">${ingredients.yeast}</ul>
+                <li> <span>Malta:</span> </li>
+                    <ul class="ingredients" id="malt"></ul>
+                <li> <span>Lúpulo:</span> </li>
+                    <ul class="ingredients" id="hops"></ul>
+            </ul>
         </div>
+
     </div>
-    </div>
- `;
+    `;
 
 
 
@@ -59,9 +49,9 @@ const renderDetail = async id => {
     try {
         renderLoader('hide', 'show');
         //const beer = await (getBeersDetail(id));
-        const [beer] = await Promise.all([getBeersDetail(id), renderQuotes(id), renderLikes(id)]); //[show] es un destructuring. Coge el primer elemento del array que devuelve
+        const [beer] = await Promise.all([getBeersDetail(id), renderQuotes(id)]); //, renderLikes(id)]); //[show] es un destructuring. Coge el primer elemento del array que devuelve
 
-        const selector = document.querySelector('main');        
+        const selector = document.querySelector('main');
         selector.innerHTML = detailTemplate(beer);
         addIngredients(beer.ingredients)
 
@@ -69,29 +59,29 @@ const renderDetail = async id => {
         console.error(err);
     } finally {
         renderLoader('show', 'hide');
-      }
+    }
 };
 
-function addIngredients (ingredients) { 
+function addIngredients(ingredients) {
 
     var malt = [];
     var hops = [];
 
-    Object.keys(ingredients.malt).forEach(function(key) {
+    Object.keys(ingredients.malt).forEach(function (key) {
         malt += ` ${ingredients.malt[key].name}: ${ingredients.malt[key].amount.value} ${ingredients.malt[key].amount.unit} <br>`
     });
 
-    Object.keys(ingredients.hops).forEach(function(key) {
+    Object.keys(ingredients.hops).forEach(function (key) {
         hops += ` ${ingredients.hops[key].name}: ${ingredients.hops[key].amount.value} ${ingredients.hops[key].amount.unit}. 
         De tipo ${ingredients.hops[key].attribute}. Añadido al: ${ingredients.hops[key].add}<br>`
     });
 
     var ulMalt = document.getElementById("malt");
-    var ulHops = document.getElementById("hops"); 
-   
-    ulMalt.innerHTML = `${malt}`; 
-    ulHops.innerHTML = `${hops}`; 
-    
-  }
+    var ulHops = document.getElementById("hops");
+
+    ulMalt.innerHTML = `${malt}`;
+    ulHops.innerHTML = `${hops}`;
+
+}
 
 export default renderDetail;

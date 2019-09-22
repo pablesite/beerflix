@@ -7,7 +7,7 @@ import api from './api.js';
 
 const { getBeers, getBeersData } = api();
 
-const templateBeers = ({ beerId, name, image, description }) => `
+const templateBeers = ({ beerId, name, image, price, brewersTips }) => `
     <div class="grid-item grid-item-${beerId}">
       <a href="/detail/${beerId}">
         <div class="beer ">
@@ -19,7 +19,8 @@ const templateBeers = ({ beerId, name, image, description }) => `
               <img src="${image}">
             </div>
             <div class="beer-content-text">
-              <p>${description}</p>
+              <p> Precio: ${price} €.</p>
+              <p class="parrafo"> Consejos para disfrutarla: <br> ${brewersTips} </p>
             </div>
           </div>
         </div>

@@ -16,7 +16,7 @@
     --color-2: #8f5c38;
     --button-color: #f1cd00;
     --button-color-hov:#DCBB00; 
-    --bg-main-color: #F7E373
+    --bg-main-color: #F2EBB0
 }
 
 * {
@@ -41,6 +41,29 @@ body{
 main {
     max-width: var(--max-width);
     margin: 0 auto;
+    background-color: var(--bg-main-color);
+}
+
+main h1 {
+    margin: 0;
+}
+
+main h2 {
+    margin: 0;
+}
+
+.social{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: auto;
+    grid-gap: 0rem;
+
+    max-width: var(--max-width);
+    margin: 0 auto;
+    background-color: var(--bg-main-color);
+
+    padding: 0 1rem 0 1rem;
+
 }
 
 

@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="/src/css/navbar.css">
     <link rel="stylesheet" href="/src/css/header.css">
     <link rel="stylesheet" href="/src/css/grid.css">
+    <link rel="stylesheet" href="/src/css/detail.css">
+    <link rel="stylesheet" href="/src/css/quotes.css">
     <link rel="stylesheet" href="/src/css/img_hover.css">
     <link rel="stylesheet" href="/src/css/flaticon_social.css">
     <link rel="stylesheet" href="/src/css/footer.css">
@@ -29,18 +31,19 @@
         </div>
 
         <!-- <ul class="menu-list"> -->
-        
-            <!-- <input validate type="text" class="search" placeholder="Buscar"> -->
 
-            <form id="search" class="filter-input" novalidate>
+        <!-- <input validate type="text" class="search" placeholder="Buscar"> -->
 
-                <label class="item-form align-right yellow" for="start">Start date:</label>
-                <input class="item-form text-date" type="date" id="start" name="beer-start" value="2003-07-22">
-                <input class="item-form" data-pattern-mismatch="Input invalid" required placeholder="Busca tu cerveza" type="text">
-                <label class="item-form align-right yellow" for="end">End date:</label>
-                <input class="item-form text-date" type="date" id="end" name="beer-end" value="2012-07-22">                
-                <button class="item-form button" type="submit" >Filtrar</button>
-            </form>
+        <form id="search" class="filter-input" novalidate>
+
+            <label class="item-form align-right yellow" for="start">Start date:</label>
+            <input class="item-form text-date" type="date" id="start" name="beer-start" value="2003-07-22">
+            <input class="item-form" id="search-input" data-pattern-mismatch="Input invalid" required
+                placeholder="Busca tu cerveza" type="text">
+            <label class="item-form align-right yellow" for="end">End date:</label>
+            <input class="item-form text-date" type="date" id="end" name="beer-end" value="2012-07-22">
+            <button class="item-form button" type="submit">Filtrar</button>
+        </form>
 
         <!-- </ul> -->
 
@@ -57,24 +60,59 @@
 
     <!-- main–section -->
     <main>
+        <!-- detail-section -->
+        <!-- <div class="detail-section">
+            
+            <div class="beer-title-section">
+                <h1>${name}</h1>
+            </div>
+           
+
+            <div class="beer-content-left">
+                <div class="beer-content-image">
+                    <img src="${image}" />
+                </div>
+            </div>
+
+            <div class="beer-content-right">
+                
+                <p> Precio: ${price} €.</p>
+                <p class="parrafo"> Descripción: ${description} </p>
+                <p> Consejos para disfrutarla: ${brewersTips} </p>
+                <p> Fecha de la primera elaboración: ${firstBrewed} </p>
+                <p> Ingredientes: </p>
+                <ul>
+                    <li> Levadura: ${ingredients.yeast} </li>
+                    <li> Malta: </li>
+                    <ul id="malt"></ul>
+
+                    <li> Lúpulo: </li>
+                    <ul id="hops"></ul>
+                </ul>
+            </div>
+
+        </div>  -->
+        <!-- detail-section end -->
 
     </main>
     <!-- main-section end -->
 
-    <!-- detail-section -->
-    <!-- detail-section end -->
+    <aside class="social">
+        <!-- comment-form -->
+        <section id="quotesSection" class="quotes-section">
 
-    <!-- comment-form -->
-    <section id="detailSection" class="detail-section">
-  
-    </section>
-    <!-- comment-form end -->
+            <!-- esto genera el formulario para meter comentarios, template en ui.js -->
+            <!-- hasta aquí-->
+            
+        </section>
+        <!-- comment-form end -->
 
-    <!-- comment-form -->
-    <section id="likeSection" class="like-section">
-  
-    </section>
-    <!-- comment-form end -->
+        <!-- comment-form -->
+        <section id="likesSection" class="likes-section">
+
+        </section>
+        <!-- comment-form end -->
+    </aside>
 
     <!-- footer -->
     <footer class="footer">
@@ -94,7 +132,10 @@
 
     <!-- loader -->
     <div id="loader" class="loader-container hide">
-            <div  class="lds-ripple">  <div></div><div></div> </div>
+        <div class="lds-ripple">
+            <div></div>
+            <div></div>
+        </div>
     </div>
 
     <!-- Loader end -->
