@@ -6,13 +6,8 @@
 
     padding: 0 1rem 0 1rem;
 
-    /* //Alineación global */
-    /* //Horizontal */
     justify-items: center; 
-    /* //Vertical */
     align-items: center; 
-  
-    /* //Autoflow!! */
     grid-auto-flow: dense;
 }
 
@@ -25,7 +20,6 @@
   
     width:100%;
     min-height: 100%; 
-    /* background-color: var(--bg-beer); */
     display: flex;
     justify-content: center;
     align-items: top;
@@ -78,6 +72,19 @@
         
         .beer-title-section h1 {
         padding: 1rem 0 1rem 0; 
+        font-size: 2.2rem;
+    }
+
+    .beer-content-right  {
+        font-size: 1rem;
+    
+    }
+
+}
+
+@media all and (min-width: 1280px) {
+    .beer-title-section h1 {
+        padding: 1rem 0 1rem 0; 
         font-size: 3rem;
     }
 
@@ -85,11 +92,6 @@
         font-size: 1.5rem;
     
     }
-
-}
-
-@media all and (min-width: 1280px) {
-
 
 }
 

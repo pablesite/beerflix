@@ -2,7 +2,7 @@
 
 /*HEADER HOME*/
 .header {
-    background-image: url(/src/img/beer-header@360.jpg); /*center center no-repeat;*/
+    background-image: url(/src/img/beer-header@360.jpg); 
 
     background-image: 
     -webkit-image-set(

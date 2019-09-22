@@ -8,7 +8,7 @@ const renderLikes = async id => {
         const likesList = document.querySelector('#likesList');
         const beer = await getBeersDetail(id);
         likesList.innerHTML = likesTemplate(beer);
-       // likesList.innerHTML = beer.likes.map(likesTemplate).join('');
+       
     } catch (err) {
         console.error(err);
     }

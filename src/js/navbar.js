@@ -21,7 +21,6 @@ const navbar = document.querySelector('.filter-input');
 searchForm.addEventListener('submit', evt => {
     evt.preventDefault();
     if (searchInput.validity.valid || filterDataStart.validity.valid || filterDataEnd.validity.valid) {
-        //render shows
         setItem('filter-input', searchInput.value);
         setItem('date-start', filterDataStart.value);
         setItem('date-end', filterDataEnd.value);

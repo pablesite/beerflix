@@ -71,7 +71,6 @@
     grid-template-columns: repeat(1,1fr);
     grid-template-rows: auto;
     grid-gap: 0rem;
-    /* margin: .6rem 0 0 0; */
     font-size: small;
 }
 
@@ -125,6 +124,31 @@
 
 @media all and (min-width: 768px) {
     .asideBar {
+        font-size: 1rem;
+    }
+
+    .list-item  {
+        font-size: 1rem;
+    }
+
+    .quote-input  {
+        margin-top: 1.2rem;
+        font-size: 1rem;
+    }
+
+    #input-quote {
+        font-size: .8rem;
+    }
+
+    .button {
+        font-size: .8rem;
+    }
+
+}
+
+@media all and (min-width: 1280px) {
+
+    .asideBar {
         font-size: 1.5rem;
     }
 
@@ -144,10 +168,6 @@
     .button {
         font-size: 1.2rem;
     }
-
-}
-
-@media all and (min-width: 1280px) {
 
 
 }

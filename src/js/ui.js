@@ -1,9 +1,5 @@
-
-// const logo = document.querySelector('#navbar .navbar-logo');
 const loader = document.querySelector('#loader');
-
 const quotesSection = document.querySelector('#quotesSection');
-
 
 export const showQuotesForm = () => 
   quotesSection.innerHTML = `
@@ -43,9 +39,6 @@ export const showQuotesForm = () =>
      elemento.classList.add(addClass);
    };
 
-// export const toggleClass = (elemento, toggleClass) => {
-//     elemento.classList.toggle(toggleClass);
-// };
 
 export const renderLoader = toggle(loader);
     

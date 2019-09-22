@@ -1,7 +1,6 @@
 /* Contenido principal para 360px - resolución GalaxyS9 */
 
-/* MENU HEADER */
-
+/* MENU NAVBAR */
 .menu {
     display: flex;
     align-items: center;
@@ -74,7 +73,7 @@
 	width: 60px;
 }
 
-/* estas 3 clases son nuevas */
+
 .filter-input {
     display: grid;
     grid-template-columns: .8fr 1fr 1fr;
@@ -144,8 +143,8 @@
     }
     
     .navbar-logo > a {
-        height: 80px;
-        width: 80px;
+        height: 100px;
+        width: 100px;
     }
 
     .item-form.text-date {
@@ -174,8 +173,8 @@
     }
     
     .navbar-logo > a {
-        height: 100px;
-        width: 100px;
+        height: 140px;
+        width: 140px;
     }
 
     .item-form.text-date {

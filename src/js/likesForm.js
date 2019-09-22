@@ -1,5 +1,4 @@
 import api from './api.js'
-//import { get } from 'http';
 import { renderLoader } from './ui.js';
 
 const { addLike, getBeersDetail } = api();

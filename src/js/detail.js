@@ -6,7 +6,7 @@ import { renderLikes } from './likes.js';
 
 const { getBeersDetail } = api();
 
-const detailTemplate = ({ name, image, description, firstBrewed, price, brewersTips, ingredients }) =>`
+const detailTemplate = ({ name, image, description, firstBrewed, price, brewersTips, ingredients }) => `
     <div class="detail-section">
 
         <div class="beer-title-section">
@@ -39,29 +39,6 @@ const detailTemplate = ({ name, image, description, firstBrewed, price, brewersT
     </div>
     `;
 
-
-
-//Ejecuta promesas en paralelo, la última que termine es la que limita la duración de la llamada.
-//Lógicamente, deben ser independientes
-//Promise.all([p1, p2, p3])
-
-const renderDetail = async id => {
-    try {
-        renderLoader('hide', 'show');
-        //const beer = await (getBeersDetail(id));
-        const [beer] = await Promise.all([getBeersDetail(id), renderQuotes(id), renderLikes(id)]); //[show] es un destructuring. Coge el primer elemento del array que devuelve
-
-        const selector = document.querySelector('main');
-        selector.innerHTML = detailTemplate(beer);
-        addIngredients(beer.ingredients)
-
-    } catch (err) {
-        console.error(err);
-    } finally {
-        renderLoader('show', 'hide');
-    }
-};
-
 function addIngredients(ingredients) {
 
     var malt = [];
@@ -73,7 +50,7 @@ function addIngredients(ingredients) {
 
     Object.keys(ingredients.hops).forEach(function (key) {
         hops += ` ${ingredients.hops[key].name}: ${ingredients.hops[key].amount.value} ${ingredients.hops[key].amount.unit}. 
-        De tipo ${ingredients.hops[key].attribute}. Añadido al: ${ingredients.hops[key].add}<br>`
+            De tipo ${ingredients.hops[key].attribute}. Añadido al: ${ingredients.hops[key].add}<br>`
     });
 
     var ulMalt = document.getElementById("malt");
@@ -83,5 +60,22 @@ function addIngredients(ingredients) {
     ulHops.innerHTML = `${hops}`;
 
 }
+
+
+const renderDetail = async id => {
+    try {
+        renderLoader('hide', 'show');
+
+        const [beer] = await Promise.all([getBeersDetail(id), renderQuotes(id), renderLikes(id)]); //[show] es un destructuring. Coge el primer elemento del array que devuelve
+        const selector = document.querySelector('main');
+        selector.innerHTML = detailTemplate(beer);
+        addIngredients(beer.ingredients)
+
+    } catch (err) {
+        console.error(err);
+    } finally {
+        renderLoader('show', 'hide');
+    }
+};
 
 export default renderDetail;

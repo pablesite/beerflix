@@ -1,8 +1,4 @@
-// import striptags from 'striptags';
-// import escapeHtml from 'escape-html';
-
-// import { openHeader } from './ui.js';
-import {  renderLoader } from './ui.js';
+import { renderLoader } from './ui.js';
 import api from './api.js';
 
 const { getBeers, getBeersData } = api();
@@ -35,18 +31,14 @@ const renderBeers = (element, beers) => {
       ${htmlBeers}
     </div>
   `;
-  //   const headers = document.querySelectorAll('.card.secondary .card-header');
-  //   headers.forEach((header) => {
-  //     const id = header.parentNode.getAttribute('id');
-  //     header.addEventListener('click', openHeader(id));
-  // });
+
 };
 
 export const renderBeersDOM = async (textQuery, startDataQuery, endDataQuery) => {
   try {
     renderLoader('hide', 'show');
     var fetchBeers;
-    // si las fechas no existen, haces lo de siempre
+    // si las fechas no existen, hace lo de siempre
     if (!startDataQuery && !endDataQuery) {
       fetchBeers = await getBeers(textQuery);
     } else {
@@ -54,7 +46,7 @@ export const renderBeersDOM = async (textQuery, startDataQuery, endDataQuery) =>
     }
     const showSection = document.querySelector('main');
     renderBeers(showSection, fetchBeers);
-  } catch (e) { 
+  } catch (e) {
     console.error(e);
   } finally {
     renderLoader('show', 'hide');

@@ -1,5 +1,3 @@
-// import {hideFilter, showFilter} from './navbar.js';
-
 import {renderBeersDOM} from './beers.js'
 import renderDetail from './detail.js';
 import {hideFilter, showFilter} from './navbar.js';
@@ -22,13 +20,9 @@ page('/detail/:id', ctx => {
     hideFilter();
     showQuotesForm();
     renderDetail(id);
-
     addLikesListener(id);
     addQuoteListener(id);
-    
-    
-    
-    
+ 
 });
 
 page();

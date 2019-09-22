@@ -1,20 +1,18 @@
 import api from './api.js'
-//import { get } from 'http';
 import { renderLoader } from './ui.js';
 
 const { createQuote, getBeersDetail } = api();
 
 export const quoteTemplate = ( { comment, dateComment }, id ) => `
 <div class="list-item">
-    <div id="quote-header">Comentario ${id}, publicado: ${dateComment.split("T")[0]}</div>
+    <div id="quote-header">Comentario ${id+1}, publicado: ${dateComment.split("T")[0]}</div>
         <p>${comment}</p>
 </div>
 `;
 
-export const testTemplate = ( id ) => `
+export const lengthQuotesTemplate = ( id ) => `
 ${id}
 `;
-
 
 const addQuoteListener = id => {
     const quotesForm = document.querySelector('#quote-form');
@@ -31,9 +29,9 @@ const addQuoteListener = id => {
                 const responseFail = await createQuote(id, quotesInput.value);
                 //la API no trae los comentarios... hay que volver a llamar el listado de cervezas
                 const response = await getBeersDetail(id);
-                quotesList.innerHTML += quoteTemplate(response.comment[response.comment.length-1], response.comment.length);           
+                quotesList.innerHTML += quoteTemplate(response.comment[response.comment.length-1], response.comment.length-1);           
                 console.log(response.comment.length)
-                testList.innerHTML = testTemplate(response.comment.length);
+                testList.innerHTML = lengthQuotesTemplate(response.comment.length);
             }    
                 
         } catch (err) {

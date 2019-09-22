@@ -1,7 +1,6 @@
 /* Contenido principal para 360px - resolución GalaxyS9 */
 
 .grid {
-  
     display: grid;
     grid-template-columns: repeat(1,1fr);
     grid-template-rows: auto;
@@ -9,24 +8,16 @@
 
     padding: 0 1rem 0 1rem;
     width: var(--max-width - 100px);
-    /* height: 115vh; */
-  
-    /* //Alineación global */
-    /* //Horizontal */
+
     justify-items: center; 
-    /* //Vertical */
     align-items: center; 
-  
-    /* //Autoflow!! */
     grid-auto-flow: dense;
   
 }
 
 .grid-item {
-  
     width:100%;
     min-height: 100%; 
-    /* background-color: var(--bg-beer); */
     display: flex;
     justify-content: space-between;
     align-items: top;
@@ -49,16 +40,12 @@
 }
 
 
-
-
 /*MEDIA QUERIES*/
 
 @media all and (min-width: 768px) {
     .grid {
         grid-template-columns: repeat(2,1fr);
     }
-
-
 
 }
 
@@ -67,8 +54,6 @@
     .grid {
         grid-template-columns: repeat(3,1fr);
     }
-
-
 
 }
 
