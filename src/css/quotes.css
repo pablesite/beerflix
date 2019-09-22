@@ -4,6 +4,8 @@
     grid-template-rows: auto;
     grid-gap: 0rem;
     align-content: center;
+    background-color:var(--button-color);
+    border-radius: 8px;
 
 }
 
@@ -96,8 +98,14 @@
 
 .quoteForm {
     margin: .6rem 0 1rem 0;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+
 }
 
+.quote-input {
+    justify-self: center;
+}
 
 .quote-input .button {
     background-color: var(--button-color); 
@@ -112,3 +120,34 @@
     background-color: var(--button-color-hov); 
 } 
 
+
+/*MEDIA QUERIES*/
+
+@media all and (min-width: 768px) {
+    .asideBar {
+        font-size: 1.5rem;
+    }
+
+    .list-item  {
+        font-size: 1.5rem;
+    }
+
+    .quote-input  {
+        margin-top: 2rem;
+        font-size: 1.5rem;
+    }
+
+    #input-quote {
+        font-size: 1.2rem;
+    }
+
+    .button {
+        font-size: 1.2rem;
+    }
+
+}
+
+@media all and (min-width: 1280px) {
+
+
+}

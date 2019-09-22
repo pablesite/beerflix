@@ -5,8 +5,7 @@
     grid-gap: 0rem;
 
     padding: 0 1rem 0 1rem;
-    width: var(--max-width - 100px);
-  
+
     /* //Alineación global */
     /* //Horizontal */
     justify-items: center; 
@@ -21,6 +20,7 @@
     padding: .5rem 0 .5rem 0; 
     font-size: larger;
 }
+
 .beer-content-left {
   
     width:100%;
@@ -67,3 +67,30 @@
     text-decoration-line: none;
     
 }
+
+/*MEDIA QUERIES*/
+
+@media all and (min-width: 768px) {
+    .detail-section{
+           
+        padding: 0 3rem 0 3rem;
+    }
+        
+        .beer-title-section h1 {
+        padding: 1rem 0 1rem 0; 
+        font-size: 3rem;
+    }
+
+    .beer-content-right  {
+        font-size: 1.5rem;
+    
+    }
+
+}
+
+@media all and (min-width: 1280px) {
+
+
+}
+
+

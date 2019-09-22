@@ -24,6 +24,8 @@
     display:block;
     margin:auto;
 
+    cursor: pointer;
+
 }
 
 .beer-content-image > figcaption {
@@ -37,6 +39,7 @@
     visibility: visible;
 
     padding: 1em;
+
 
 }
 
@@ -61,7 +64,11 @@
 /*MEDIA QUERIES*/
 
 @media all and (min-width: 768px) {
+    .beer-content-image > img {
+        max-height: 350px;
 
+    
+    }
 }
 
 @media all and (min-width: 1280px) {
