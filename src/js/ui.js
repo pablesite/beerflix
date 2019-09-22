@@ -7,31 +7,35 @@ const likesSection = document.querySelector('#likesSection');
 
 export const showQuotesForm = () => 
   quotesSection.innerHTML = `
-  <h2>Comentarios</h2>
+  <div class="asideBar">
+    
+    <div class="asideBarItem">
+      <form id="likes-form" class="likesForm" novalidate>
+        <div id="likesList"> </div>
+        <button type="submit" class="likesButton"></button>
+      </form>
+    </div>
+
+    <div class="asideBarItem">
+      <div id="testList"></div>
+      <div id="inline"> comentarios</div>
+    </div> 
+
+  </div>
+
   <div id="quoteList"></div>
+
   <form id="quote-form" class="quoteForm" novalidate>
     <div class="quote-input">
       <label id="label-quote" for="quote">¡Comenta esta cerveza!</label> <br>
       <input id="input-quote" required placeholder="Inserta tu comentario" class="input primary" type="text">        <button type="submit" class="button primary">Añadir</button>
       </div>
-  </form>
+  </form> 
   `;
 
 
   export const showLikesForm = () => 
     likesSection.innerHTML = `
-    <div id="detail" class="detail-content"></div>
-  <div class="likes-list">
-    <h2>Likes</h2>
-    <div id="likesList">
-    </div>
-  </div>
-  <form id="likes-form" class="likes-form" novalidate>
-    <div class="likes-input">
-      <label for="likes">likes of this beer</label>
-    </div>
-    <button type="submit" class="button primary">Add like</button>
-  </form>
   `;
 
 

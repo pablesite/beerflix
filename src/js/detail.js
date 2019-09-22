@@ -6,7 +6,7 @@ import { renderLikes } from './likes.js';
 
 const { getBeersDetail } = api();
 
-const detailTemplate = ({ beerId, name, image, description, firstBrewed, price, brewersTips, ingredients }) =>`
+const detailTemplate = ({ name, image, description, firstBrewed, price, brewersTips, ingredients }) =>`
     <div class="detail-section">
 
         <div class="beer-title-section">
@@ -49,7 +49,7 @@ const renderDetail = async id => {
     try {
         renderLoader('hide', 'show');
         //const beer = await (getBeersDetail(id));
-        const [beer] = await Promise.all([getBeersDetail(id), renderQuotes(id)]); //, renderLikes(id)]); //[show] es un destructuring. Coge el primer elemento del array que devuelve
+        const [beer] = await Promise.all([getBeersDetail(id), renderQuotes(id), renderLikes(id)]); //[show] es un destructuring. Coge el primer elemento del array que devuelve
 
         const selector = document.querySelector('main');
         selector.innerHTML = detailTemplate(beer);

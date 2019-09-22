@@ -1,3 +1,69 @@
+.asideBar {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto;
+    grid-gap: 0rem;
+    align-content: center;
+
+}
+
+.likesButton {
+    background-image: url(/src/img/me_gusta_before.png);
+
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover; 
+
+    flex-direction: column;
+    justify-content: center;
+
+    width: 2rem;
+    height: 2rem;
+    margin: 0;
+
+    border: 0;
+    text-decoration: none;
+    cursor: pointer;
+    
+}
+
+.likesButton:hover {
+    background-image: url(/src/img/me_gusta.png);
+
+}
+
+
+.asideBarItem {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    
+}
+
+.likesForm {
+    text-align: center;
+}
+
+#likesList {
+    display: inline;
+}
+
+.likes-item {
+    display: inline;
+}
+
+#testList {
+    display: inline;
+}
+
+#inline {
+    display: inline;
+}
+
+.test-item {
+    display: inline;
+}
+
 .list-item  {
     display: grid;
     grid-template-columns: repeat(1,1fr);
@@ -13,6 +79,7 @@
 
 .list-item p  {
     margin: .4rem 0 0 0;
+    text-align: justify;
 }
 
 

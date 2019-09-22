@@ -86,9 +86,7 @@ const api = (API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh
                     throw new Error('Error getting a show');
                 }
 
-                const data = await response.json();
-                console.log("response: " +data.beer)
-               
+                const data = await response.json();              
                 return data.beer;
 
                } catch (err) {

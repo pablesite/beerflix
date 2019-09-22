@@ -2,15 +2,14 @@
 
 import {renderBeersDOM} from './beers.js'
 import renderDetail from './detail.js';
-// import {showQuotesForm, showLikesForm} from './ui.js';
-import {showQuotesForm} from './ui.js';
+import {showQuotesForm, showLikesForm} from './ui.js';
 import addQuoteListener from './quotesForm.js'
-//import addLikesListener from './likesForm.js'
+import addLikesListener from './likesForm.js'
 
 
 page('/', () => { // eslint-disable-line
     console.log('Home page');
-    // //handleNavBar('no-filter', 'filter')
+    // handleNavBar('no-filter', 'filter')
     // showFilter();
     // hideQuotesForm();
     renderBeersDOM();
@@ -19,13 +18,14 @@ page('/', () => { // eslint-disable-line
 page('/detail/:id', ctx => {
     console.log('Detail');
     const { params: { id } } = ctx;
+    showLikesForm();
     showQuotesForm();
-    //showLikesForm();
     
     renderDetail(id);
 
+    addLikesListener(id);
     addQuoteListener(id);
-  //  addLikesListener(id);
+    
     
     
     
